@@ -6,3 +6,44 @@ A refresher on TCC and LCC is available in the [course notes](https://oscarlvp.g
 
 ## Answer
 
+### **TCC = LCC**
+
+```java
+public class BankAccount {
+    private double balance;
+    private String accountName;
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getAccountName() {
+        return accountHolderName;
+    }
+}
+```
+
+In this class all methods directly interact with common attributes:
+
+1. Methods `deposit`, `withdraw`, and `getBalance` interact directly with `balance`.
+2. Method `getAccountName` interacts directly with `accountName`.
+
+Every pair of methods either directly shares an attribute or does not share at all.(no indirect connections exist).
+
+---
+
+### **LCC < TCC**
+
+No, it is impossible for LCC to be lower than TCC for any given class , since TCC counts only direct connections and 
+LCC includes both direct and indirect connections.
+So LCC has to be >= TCC.
+
+---
